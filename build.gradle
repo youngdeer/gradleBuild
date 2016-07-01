@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.final'
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+	
+	//spring
+	def springVersion = "4.0.1.RELEASE"
+	def springDataJpaVersion = "1.5.1.RELEASE"
+	def springSecurityVersion = "3.2.3.RELEASE"
+	
+	//spring
+	compile "org.springframework:spring-webmvc:$springVersion"
+	compile "org.springframework:spring-context:$springVersion"
+	compile "org.springframework:spring-jdbc:$springVersion"
+	compile "org.springframework:spring-tx:$springVersion"
+	compile "org.springframework:spring-orm:$springVersion"
+	compile "org.springframework:spring-oxm:$springVersion"
+	compile "org.springframework:spring-webmvc:$springVersion"
+	compile "org.springframework:spring-webmvc:$springVersion"
+	compile "org.springframework.data:spring-data-jpa:$springDataJpaVersion"
+	compile "org.springframework.security:spring-security-web:$springDataJpaVersion"
+	compile "org.springframework.security:spring-security-config:$springDataJpaVersion"
+}
