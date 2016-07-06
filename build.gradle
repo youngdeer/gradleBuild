@@ -1,6 +1,15 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+';
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'jetty'
+apply plugin: 'org.akhikhl.gretty'
 apply plugin: 'eclipse'
 apply plugin: 'eclipse-wtp'
 
@@ -26,4 +35,10 @@ dependencies {
 	compile "org.springframework:spring-webmvc:$springVersion"
 	compile "org.springframework:spring-webmvc:$springVersion"
 	compile "org.springframework.data:spring-data-jpa:$springDataJpaVersion"
+}
+
+gretty {
+    port = 8000
+    contextPath = '/'
+    servletContainer = 'jetty9'
 }

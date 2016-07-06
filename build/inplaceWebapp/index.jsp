@@ -21,6 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    gradlebuild. <br>
+    gradlebuild.deer is success start gradle web app <br>
   </body>
 </html>
